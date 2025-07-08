@@ -1,4 +1,4 @@
-import ChatbotMock from '../components/ChatbotMock'
+import EnhancedChatbot from '../components/EnhancedChatbot'
 import ForecastChart from '../components/ForecastChart'
 import RegionTable from '../components/RegionTable'
 import DeviceInput from '../components/DeviceInput'
@@ -167,8 +167,8 @@ export default function PremiumPage() {
         </div>
       </div>
 
-      {/* Floating Chat Assistant */}
-      <ChatbotMock />
+      {/* Enhanced Floating Chat Assistant */}
+      <EnhancedChatbot />
     </div>
   )
 } 

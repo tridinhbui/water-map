@@ -1,5 +1,7 @@
 import Heatmap from './components/Heatmap'
 import UpgradeBanner from './components/UpgradeBanner'
+import EnhancedChatbot from './components/EnhancedChatbot'
+import { NotificationCenter } from './components/NotificationCenter'
 
 export default function HomePage() {
   return (
@@ -62,6 +64,22 @@ export default function HomePage() {
           {/* Heatmap Section */}
           <section id="heatmap" className="scroll-mt-20">
             <Heatmap />
+          </section>
+
+          {/* Enhanced AI Chatbot Section - Fullscreen */}
+          <section className="fade-in-up">
+            <div className="text-center mb-8">
+              <h2 className="text-4xl font-bold gradient-text mb-4 floating-animation">
+                🤖 Trò Chuyện Với AquaBot AI
+              </h2>
+              <p className="text-white/80 text-xl max-w-3xl mx-auto leading-relaxed">
+                Hỏi AI bất cứ điều gì về chất lượng nước. AquaBot có thể phân tích heatmap, 
+                dự báo xu hướng và đưa ra khuyến nghị thông minh cho bạn.
+              </p>
+            </div>
+            <div className="enhanced-chatbot">
+              <EnhancedChatbot isFullscreen={true} />
+            </div>
           </section>
 
           {/* Upgrade Banner Section */}
