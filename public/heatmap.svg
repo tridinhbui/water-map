@@ -1,0 +1,281 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Advanced gradients for 3D effect -->
+    <radialGradient id="backgroundGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#020617;stop-opacity:1" />
+    </radialGradient>
+    
+    <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#3730a3;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#581c87;stop-opacity:0.4" />
+    </linearGradient>
+    
+    <!-- Glow effects for quality indicators -->
+    <filter id="excellentGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="goodGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="moderateGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="poorGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="dangerousGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 3D Shadow effect -->
+    <filter id="shadow3D" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="3" dy="6" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Smooth heat diffusion gradients with better contrast -->
+    <radialGradient id="heatExcellent" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.9" />
+      <stop offset="40%" style="stop-color:#34d399;stop-opacity:0.7" />
+      <stop offset="70%" style="stop-color:#6ee7b7;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#a7f3d0;stop-opacity:0.1" />
+    </radialGradient>
+    
+    <radialGradient id="heatGood" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.9" />
+      <stop offset="40%" style="stop-color:#38bdf8;stop-opacity:0.7" />
+      <stop offset="70%" style="stop-color:#7dd3fc;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#bae6fd;stop-opacity:0.1" />
+    </radialGradient>
+    
+    <radialGradient id="heatModerate" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.9" />
+      <stop offset="40%" style="stop-color:#fbbf24;stop-opacity:0.7" />
+      <stop offset="70%" style="stop-color:#fcd34d;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#fef3c7;stop-opacity:0.1" />
+    </radialGradient>
+    
+    <radialGradient id="heatPoor" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#ea580c;stop-opacity:0.9" />
+      <stop offset="40%" style="stop-color:#f97316;stop-opacity:0.7" />
+      <stop offset="70%" style="stop-color:#fb923c;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#fed7aa;stop-opacity:0.1" />
+    </radialGradient>
+    
+    <radialGradient id="heatDangerous" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:0.95" />
+      <stop offset="40%" style="stop-color:#ef4444;stop-opacity:0.8" />
+      <stop offset="70%" style="stop-color:#f87171;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#fecaca;stop-opacity:0.2" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background with gradient -->
+  <rect width="1200" height="800" fill="url(#backgroundGradient)"/>
+  
+  <!-- Animated particles background -->
+  <g opacity="0.1">
+    <circle cx="100" cy="100" r="2" fill="#ffffff">
+      <animate attributeName="cy" values="100;700;100" dur="20s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="200" r="1.5" fill="#ffffff">
+      <animate attributeName="cy" values="200;600;200" dur="15s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="150" r="1" fill="#ffffff">
+      <animate attributeName="cy" values="150;650;150" dur="18s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="250" r="2" fill="#ffffff">
+      <animate attributeName="cy" values="250;750;250" dur="22s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="180" r="1.5" fill="#ffffff">
+      <animate attributeName="cy" values="180;680;180" dur="16s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Heat diffusion zones (background layer) -->
+  <circle cx="480" cy="200" r="80" fill="url(#heatExcellent)" opacity="0.3"/>
+  <circle cx="520" cy="620" r="90" fill="url(#heatModerate)" opacity="0.3"/>
+  <circle cx="630" cy="380" r="70" fill="url(#heatGood)" opacity="0.3"/>
+  <circle cx="510" cy="240" r="75" fill="url(#heatPoor)" opacity="0.3"/>
+  <circle cx="450" cy="400" r="85" fill="url(#heatModerate)" opacity="0.3"/>
+  <circle cx="570" cy="640" r="65" fill="url(#heatGood)" opacity="0.3"/>
+  <circle cx="645" cy="430" r="70" fill="url(#heatGood)" opacity="0.3"/>
+  <circle cx="675" cy="510" r="80" fill="url(#heatExcellent)" opacity="0.3"/>
+  <circle cx="630" cy="680" r="75" fill="url(#heatModerate)" opacity="0.3"/>
+  <circle cx="510" cy="160" r="90" fill="url(#heatDangerous)" opacity="0.4"/>
+  
+  <!-- Vietnam map outline (more detailed) -->
+  <path d="M450 120 L480 100 L520 105 L560 115 L600 135 L640 160 L670 200 L690 250 L700 300 L695 350 L680 400 L670 450 L655 500 L640 550 L620 590 L600 620 L570 650 L540 670 L500 680 L460 675 L420 665 L390 645 L370 620 L360 590 L350 550 L345 500 L350 450 L360 400 L370 350 L380 300 L390 250 L400 200 L415 150 L435 125 Z" 
+        fill="url(#mapGradient)" 
+        stroke="rgba(99, 102, 241, 0.8)" 
+        stroke-width="2" 
+        filter="url(#shadow3D)"/>
+  
+  <!-- Secondary map layer for depth -->
+  <path d="M455 125 L475 108 L515 113 L555 123 L590 143 L625 168 L655 208 L675 258 L685 308 L680 358 L665 408 L655 458 L640 508 L625 558 L605 598 L585 628 L555 658 L525 678 L485 688 L445 683 L405 673 L375 653 L355 628 L345 598 L340 558 L345 508 L355 458 L365 408 L375 358 L385 308 L395 258 L405 208 L420 158 L440 133 Z" 
+        fill="none" 
+        stroke="rgba(129, 140, 248, 0.4)" 
+        stroke-width="1" 
+        opacity="0.6"/>
+  
+  <!-- Water quality indicators with 3D effects and glows -->
+  
+  <!-- Hanoi (Good) -->
+  <circle cx="480" cy="200" r="15" fill="url(#heatGood)" filter="url(#goodGlow)"/>
+  <circle cx="480" cy="200" r="8" fill="#22d3ee" opacity="0.9"/>
+  <circle cx="478" cy="198" r="3" fill="#ffffff" opacity="0.6"/>
+  <text x="505" y="205" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff" filter="url(#shadow3D)">Hanoi</text>
+  
+  <!-- Ho Chi Minh City (Moderate) -->
+  <circle cx="520" cy="620" r="18" fill="url(#heatModerate)" filter="url(#moderateGlow)"/>
+  <circle cx="520" cy="620" r="10" fill="#fbbf24" opacity="0.9"/>
+  <circle cx="518" cy="618" r="4" fill="#ffffff" opacity="0.6"/>
+  <text x="545" y="625" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff" filter="url(#shadow3D)">Ho Chi Minh City</text>
+  
+  <!-- Da Nang (Good) -->
+  <circle cx="630" cy="380" r="14" fill="url(#heatGood)" filter="url(#goodGlow)"/>
+  <circle cx="630" cy="380" r="8" fill="#22d3ee" opacity="0.9"/>
+  <circle cx="628" cy="378" r="3" fill="#ffffff" opacity="0.6"/>
+  <text x="655" y="385" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff" filter="url(#shadow3D)">Da Nang</text>
+  
+  <!-- Hai Phong (Poor) -->
+  <circle cx="510" cy="240" r="16" fill="url(#heatPoor)" filter="url(#poorGlow)"/>
+  <circle cx="510" cy="240" r="9" fill="#f97316" opacity="0.9"/>
+  <circle cx="508" cy="238" r="3.5" fill="#ffffff" opacity="0.6"/>
+  <text x="535" y="245" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff" filter="url(#shadow3D)">Hai Phong</text>
+  
+  <!-- Can Tho (Moderate) -->
+  <circle cx="450" cy="400" r="15" fill="url(#heatModerate)" filter="url(#moderateGlow)"/>
+  <circle cx="450" cy="400" r="8" fill="#fbbf24" opacity="0.9"/>
+  <circle cx="448" cy="398" r="3" fill="#ffffff" opacity="0.6"/>
+  <text x="475" y="405" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff" filter="url(#shadow3D)">Can Tho</text>
+  
+  <!-- Bien Hoa (Good) -->
+  <circle cx="570" cy="640" r="13" fill="url(#heatGood)" filter="url(#goodGlow)"/>
+  <circle cx="570" cy="640" r="7" fill="#22d3ee" opacity="0.9"/>
+  <circle cx="568" cy="638" r="2.5" fill="#ffffff" opacity="0.6"/>
+  <text x="595" y="645" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff" filter="url(#shadow3D)">Bien Hoa</text>
+  
+  <!-- Hue (Good) -->
+  <circle cx="645" cy="430" r="14" fill="url(#heatGood)" filter="url(#goodGlow)"/>
+  <circle cx="645" cy="430" r="8" fill="#22d3ee" opacity="0.9"/>
+  <circle cx="643" cy="428" r="3" fill="#ffffff" opacity="0.6"/>
+  <text x="670" y="435" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff" filter="url(#shadow3D)">Hue</text>
+  
+  <!-- Nha Trang (Excellent) -->
+  <circle cx="675" cy="510" r="16" fill="url(#heatExcellent)" filter="url(#excellentGlow)"/>
+  <circle cx="675" cy="510" r="9" fill="#10b981" opacity="0.9"/>
+  <circle cx="673" cy="508" r="3.5" fill="#ffffff" opacity="0.6"/>
+  <text x="700" y="515" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff" filter="url(#shadow3D)">Nha Trang</text>
+  
+  <!-- Vung Tau (Moderate) -->
+  <circle cx="630" cy="680" r="15" fill="url(#heatModerate)" filter="url(#moderateGlow)"/>
+  <circle cx="630" cy="680" r="8" fill="#fbbf24" opacity="0.9"/>
+  <circle cx="628" cy="678" r="3" fill="#ffffff" opacity="0.6"/>
+  <text x="655" y="685" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff" filter="url(#shadow3D)">Vung Tau</text>
+  
+  <!-- Thai Nguyen (Dangerous) -->
+  <circle cx="510" cy="160" r="18" fill="url(#heatDangerous)" filter="url(#dangerousGlow)"/>
+  <circle cx="510" cy="160" r="10" fill="#ef4444" opacity="0.9"/>
+  <circle cx="508" cy="158" r="4" fill="#ffffff" opacity="0.6"/>
+  <text x="535" y="165" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff" filter="url(#shadow3D)">Thai Nguyen</text>
+  
+  <!-- Title with 3D effect -->
+  <text x="600" y="60" font-family="Inter, Arial" font-size="32" font-weight="800" text-anchor="middle" fill="#ffffff" filter="url(#shadow3D)">
+    Vietnam Water Quality Heatmap 3D
+  </text>
+  <text x="600" y="85" font-family="Inter, Arial" font-size="16" font-weight="400" text-anchor="middle" fill="#94a3b8">
+    Real-time environmental monitoring with advanced analytics
+  </text>
+  
+  <!-- Modern legend with glassmorphism effect -->
+  <g transform="translate(850, 150)">
+    <rect x="0" y="0" width="300" height="220" 
+          fill="rgba(255, 255, 255, 0.1)" 
+          stroke="rgba(255, 255, 255, 0.2)" 
+          stroke-width="1" 
+          rx="20" 
+          filter="url(#shadow3D)"/>
+    
+    <text x="150" y="30" font-family="Inter, Arial" font-size="18" font-weight="700" text-anchor="middle" fill="#ffffff">
+      Water Quality Index
+    </text>
+    
+    <!-- Excellent -->
+    <circle cx="30" cy="55" r="8" fill="#10b981" filter="url(#excellentGlow)"/>
+    <circle cx="28" cy="53" r="3" fill="#ffffff" opacity="0.6"/>
+    <text x="50" y="60" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff">Excellent (0-100 TDS)</text>
+    
+    <!-- Good -->
+    <circle cx="30" cy="85" r="8" fill="#22d3ee" filter="url(#goodGlow)"/>
+    <circle cx="28" cy="83" r="3" fill="#ffffff" opacity="0.6"/>
+    <text x="50" y="90" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff">Good (100-150 TDS)</text>
+    
+    <!-- Moderate -->
+    <circle cx="30" cy="115" r="8" fill="#fbbf24" filter="url(#moderateGlow)"/>
+    <circle cx="28" cy="113" r="3" fill="#ffffff" opacity="0.6"/>
+    <text x="50" y="120" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff">Moderate (150-200 TDS)</text>
+    
+    <!-- Poor -->
+    <circle cx="30" cy="145" r="8" fill="#f97316" filter="url(#poorGlow)"/>
+    <circle cx="28" cy="143" r="3" fill="#ffffff" opacity="0.6"/>
+    <text x="50" y="150" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff">Poor (200-250 TDS)</text>
+    
+    <!-- Dangerous -->
+    <circle cx="30" cy="175" r="8" fill="#ef4444" filter="url(#dangerousGlow)"/>
+    <circle cx="28" cy="173" r="3" fill="#ffffff" opacity="0.6"/>
+    <text x="50" y="180" font-family="Inter, Arial" font-size="14" font-weight="600" fill="#ffffff">Dangerous (250+ TDS)</text>
+    
+    <text x="150" y="205" font-family="Inter, Arial" font-size="12" font-weight="400" text-anchor="middle" fill="#94a3b8">
+      TDS: Total Dissolved Solids (mg/L)
+    </text>
+  </g>
+  
+  <!-- Data visualization overlay -->
+  <g transform="translate(50, 150)" opacity="0.8">
+    <rect x="0" y="0" width="250" height="120" 
+          fill="rgba(15, 23, 42, 0.8)" 
+          stroke="rgba(99, 102, 241, 0.3)" 
+          stroke-width="1" 
+          rx="15"/>
+    
+    <text x="125" y="25" font-family="Inter, Arial" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">
+      Live Statistics
+    </text>
+    
+    <text x="20" y="50" font-family="Inter, Arial" font-size="12" fill="#94a3b8">Monitoring Points:</text>
+    <text x="150" y="50" font-family="Inter, Arial" font-size="12" font-weight="600" fill="#22d3ee">10 Active</text>
+    
+    <text x="20" y="70" font-family="Inter, Arial" font-size="12" fill="#94a3b8">Last Update:</text>
+    <text x="150" y="70" font-family="Inter, Arial" font-size="12" font-weight="600" fill="#10b981">2 min ago</text>
+    
+    <text x="20" y="90" font-family="Inter, Arial" font-size="12" fill="#94a3b8">Average TDS:</text>
+    <text x="150" y="90" font-family="Inter, Arial" font-size="12" font-weight="600" fill="#fbbf24">165 mg/L</text>
+  </g>
+</svg> 
