@@ -244,8 +244,8 @@ export default function Heatmap() {
   return (
     <div className="w-full fade-in-up">
       <div className="mb-6 text-center">
-        <h2 className="text-4xl font-bold gradient-text mb-2 floating-animation">🌡️ Bản Đồ Nhiệt</h2>
-        <p className="text-white/80 text-lg">Heatmap chất lượng nước các vùng</p>
+        <h2 className="text-4xl font-bold gradient-text mb-2 floating-animation">Water Quality Heatmap</h2>
+        <p className="text-white/80 text-lg">Regional water quality heat map visualization</p>
         <div className="flex items-center justify-center space-x-4 mt-4 text-sm">
           <div className="flex items-center space-x-2">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -337,8 +337,7 @@ export default function Heatmap() {
         <div className="absolute top-4 right-4 rounded-lg p-3 shadow-xl border-2 border-white/30 z-40"
              style={{ background: 'rgba(0,0,0,0.8)' }}>
           <h3 className="text-xs font-bold text-white mb-2 flex items-center">
-            <span className="mr-1">🌡️</span>
-            Thang Màu
+            Color Scale
           </h3>
           
           <div className="relative">
@@ -355,12 +354,12 @@ export default function Heatmap() {
               }}
             />
             
-            <div className="absolute -right-8 top-0 text-xs text-white">Cao</div>
-            <div className="absolute -right-8 bottom-0 text-xs text-white">Thấp</div>
+            <div className="absolute -right-8 top-0 text-xs text-white">High</div>
+            <div className="absolute -right-8 bottom-0 text-xs text-white">Low</div>
           </div>
           
           <div className="mt-2 text-xs text-white text-center">
-            {isCanvasReady ? '✅' : '🔄'}
+            {isCanvasReady ? 'Ready' : 'Loading'}
           </div>
         </div>
 
@@ -368,8 +367,7 @@ export default function Heatmap() {
         <div className="absolute bottom-4 right-4 rounded-lg p-3 shadow-xl border-2 border-white/30 z-40"
              style={{ background: 'rgba(0,0,0,0.8)' }}>
           <h3 className="text-xs font-bold text-white mb-2 flex items-center">
-            <span className="mr-1">🗺️</span>
-            Mức Độ
+            Quality Levels
           </h3>
           <div className="space-y-2">
             {Object.entries(waterQualityLevels).map(([level, config]) => (
@@ -388,7 +386,7 @@ export default function Heatmap() {
         {!isCanvasReady && (
           <div className="absolute inset-0 flex items-center justify-center z-50 bg-black/30">
             <div className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-bold">
-              🔄 Đang tải...
+              Loading...
             </div>
           </div>
         )}
@@ -399,12 +397,11 @@ export default function Heatmap() {
             <div className="text-white text-center fade-in-up">
               <div className="text-base bg-black/60 backdrop-blur-md rounded-xl px-6 py-4 border-2 border-white/40 shadow-xl">
                 <div className="flex items-center space-x-3 mb-2">
-                  <span className="text-2xl">🌡️</span>
-                  <span className="font-bold">Heatmap Chất Lượng Nước</span>
+                  <span className="font-bold">Water Quality Heatmap</span>
                 </div>
                 <div className="text-sm space-y-1">
-                  <div>• Di chuyển chuột để xem chi tiết</div>
-                  <div>• Màu đỏ = rủi ro cao</div>
+                  <div>• Move mouse to view details</div>
+                  <div>• Red color = high risk</div>
                 </div>
               </div>
             </div>
@@ -523,7 +520,7 @@ export default function Heatmap() {
                 </div>
                 
                 <div className="text-center p-3 bg-purple-600/25 rounded-lg border border-purple-400/50">
-                  <div className="text-xs text-white/80">Đục</div>
+                  <div className="text-xs text-white/80">Turbidity</div>
                   <div className="font-bold text-purple-300 text-lg mt-1">{hoveredZone.region.turbidity}</div>
                   <div className="text-xs text-white/60">NTU</div>
                 </div>
@@ -543,25 +540,25 @@ export default function Heatmap() {
       <div className="mt-6 p-6 fade-in-up border-2 border-white/20 shadow-xl rounded-2xl"
            style={{ background: 'rgba(0,0,0,0.7)' }}>
         <h3 className="text-xl font-bold gradient-text mb-4 flex items-center">
-          📊 Thống Kê
+          Statistics
           <span className="ml-3 w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="text-center p-4 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-xl border border-blue-400/30">
             <div className="text-2xl font-bold text-blue-300 mb-2">10</div>
-            <div className="text-sm text-white font-semibold">Vùng Nhiệt</div>
+            <div className="text-sm text-white font-semibold">Heat Zones</div>
           </div>
           <div className="text-center p-4 bg-gradient-to-br from-green-500/20 to-green-600/10 rounded-xl border border-green-400/30">
             <div className="text-2xl font-bold text-green-300 mb-2">5</div>
-            <div className="text-sm text-white font-semibold">Mức Màu</div>
+            <div className="text-sm text-white font-semibold">Color Levels</div>
           </div>
           <div className="text-center p-4 bg-gradient-to-br from-purple-500/20 to-purple-600/10 rounded-xl border border-purple-400/30">
             <div className="text-2xl font-bold text-purple-300 mb-2">{regions.length}</div>
-            <div className="text-sm text-white font-semibold">Khu Vực</div>
+            <div className="text-sm text-white font-semibold">Regions</div>
           </div>
           <div className="text-center p-4 bg-gradient-to-br from-orange-500/20 to-orange-600/10 rounded-xl border border-orange-400/30">
-            <div className="text-2xl font-bold text-orange-300 mb-2">✓</div>
-            <div className="text-sm text-white font-semibold">Trạng Thái</div>
+            <div className="text-2xl font-bold text-orange-300 mb-2">Active</div>
+            <div className="text-sm text-white font-semibold">Status</div>
           </div>
         </div>
       </div>

@@ -21,8 +21,8 @@ export default function StickyNavigation() {
   }, [])
 
   const navigationItems = [
-    { href: '/', label: 'Heatmap', icon: '🗺️' },
-    { href: '/premium', label: 'Premium', icon: '⚡' },
+    { href: '/', label: 'Home' },
+    { href: '/premium', label: 'Premium' },
   ]
 
   return (
@@ -39,13 +39,17 @@ export default function StickyNavigation() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className={`w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 ${
+              <div className={`w-12 h-12 transition-all duration-300 group-hover:scale-110 ${
                 isScrolled ? 'shadow-lg' : 'shadow-md'
               }`}>
-                <span className="text-white font-bold text-xl">💧</span>
+                <img 
+                  src="/safedrop-logo.png" 
+                  alt="SafeDrop Logo"
+                  className="w-full h-full object-contain rounded-xl"
+                />
               </div>
               <span className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                WaterSense
+                SafeDrop
               </span>
             </Link>
             
@@ -55,13 +59,12 @@ export default function StickyNavigation() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 ${
+                  className={`flex items-center px-4 py-2 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 ${
                     pathname === item.href
                       ? 'bg-blue-500 text-white shadow-lg transform scale-105'
                       : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30'
                   }`}
                 >
-                  <span className="text-lg">{item.icon}</span>
                   <span className="font-medium">{item.label}</span>
                 </Link>
               ))}
@@ -114,7 +117,6 @@ export default function StickyNavigation() {
                       : 'text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/30'
                   }`}
                 >
-                  <span className="text-xl">{item.icon}</span>
                   <span className="font-medium">{item.label}</span>
                 </Link>
               ))}
@@ -151,8 +153,7 @@ export default function StickyNavigation() {
                   : 'text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400'
               }`}
             >
-              <span className="text-xl mb-1">{item.icon}</span>
-              <span className="text-xs font-medium">{item.label}</span>
+              <span className="text-sm font-medium">{item.label}</span>
               {pathname === item.href && (
                 <div className="w-1 h-1 bg-blue-500 rounded-full mt-1 animate-pulse" />
               )}
@@ -161,8 +162,7 @@ export default function StickyNavigation() {
           
           {/* Settings/Theme in bottom bar */}
           <button className="flex flex-col items-center justify-center p-3 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 min-w-[80px]">
-            <span className="text-xl mb-1">⚙️</span>
-            <span className="text-xs font-medium">Cài đặt</span>
+            <span className="text-sm font-medium">Settings</span>
           </button>
         </div>
       </div>

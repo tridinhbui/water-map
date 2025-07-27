@@ -239,13 +239,13 @@ export function OnboardingTutorial() {
 
   useEffect(() => {
     // Check localStorage only on client side
-    const completed = localStorage.getItem('watersense-onboarding-completed')
+    const completed = localStorage.getItem('safedrop-onboarding-completed')
     setIsVisible(!completed)
   }, [])
 
   const steps = [
     {
-      title: '🌊 Chào mừng đến với WaterSense!',
+      title: '🌊 Chào mừng đến với SafeDrop!',
       description: 'Nền tảng giám sát chất lượng nước thông minh với AI',
       target: null,
       position: 'center'
@@ -295,7 +295,7 @@ export function OnboardingTutorial() {
   }
 
   const completeOnboarding = () => {
-    localStorage.setItem('watersense-onboarding-completed', 'true')
+          localStorage.setItem('safedrop-onboarding-completed', 'true')
     setIsVisible(false)
   }
 

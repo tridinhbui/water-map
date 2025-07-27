@@ -58,8 +58,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setMounted(true)
     
     // Load saved theme and color
-    const savedTheme = localStorage.getItem('watersense-theme') as Theme || 'system'
-    const savedColor = localStorage.getItem('watersense-color') || 'blue'
+    const savedTheme = localStorage.getItem('safedrop-theme') as Theme || 'system'
+    const savedColor = localStorage.getItem('safedrop-color') || 'blue'
     
     setTheme(savedTheme)
     setPrimaryColor(savedColor)
@@ -95,7 +95,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         root.classList.remove('dark')
       }
       
-      localStorage.setItem('watersense-theme', theme)
+      localStorage.setItem('safedrop-theme', theme)
     }
 
     updateTheme()
@@ -122,7 +122,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       document.head.appendChild(style)
     }
     
-    localStorage.setItem('watersense-color', primaryColor)
+    localStorage.setItem('safedrop-color', primaryColor)
   }, [primaryColor, mounted])
 
   if (!mounted) {

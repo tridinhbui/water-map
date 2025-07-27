@@ -1,6 +1,7 @@
 import Heatmap from './components/Heatmap'
 import UpgradeBanner from './components/UpgradeBanner'
 import EnhancedChatbot from './components/EnhancedChatbot'
+import VideoEmbed from './components/VideoEmbed'
 import { NotificationCenter } from './components/NotificationCenter'
 
 export default function HomePage() {
@@ -25,14 +26,14 @@ export default function HomePage() {
           <div className="text-center mb-16 fade-in-up">
             <div className="mb-6">
               <span className="inline-block bg-white/10 backdrop-blur-sm text-sm font-medium px-4 py-2 rounded-full border border-white/20 slide-in-right">
-                🌊 Next-Gen Water Quality Monitoring
+                Next-Generation Water Quality Monitoring
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 gradient-text-white floating-animation">
               Water Quality Monitoring 3D
             </h1>
             <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed max-w-4xl mx-auto">
-              🤖 AI-powered real-time water quality tracking across Vietnam. Monitor TDS levels, 
+              AI-powered real-time water quality tracking across Vietnam. Monitor TDS levels, 
               pH, and turbidity with our advanced 3D heatmap visualization and intelligent analytics.
             </p>
             
@@ -61,6 +62,56 @@ export default function HomePage() {
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="space-y-16">
+          {/* Video Section */}
+          <section className="fade-in-up">
+            <div className="text-center mb-8">
+              <h2 className="text-4xl font-bold gradient-text mb-4 floating-animation">
+                Current Water Contamination Crisis
+              </h2>
+              
+              {/* Critical Alert Banner */}
+              <div className="max-w-4xl mx-auto mb-6 p-6 bg-gradient-to-r from-red-600/20 via-orange-600/20 to-red-600/20 rounded-2xl border-2 border-red-400/50 shadow-2xl">
+                <div className="flex items-center justify-center mb-4">
+                  <h3 className="text-3xl font-bold text-red-300">CRITICAL SITUATION</h3>
+                </div>
+                <p className="text-white text-lg font-semibold leading-relaxed">
+                  <span className="text-red-300 font-bold">Investigative footage</span> reveals severe water contamination crisis in Vietnam: 
+                  <span className="text-yellow-300 font-bold"> dead animals floating in rivers, putrid water, toxic odors spreading across regions</span> 
+                  - this is exactly why SafeDrop was created!
+                </p>
+                <div className="mt-4 flex items-center justify-center space-x-4">
+                  <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
+                  <span className="text-red-200 font-medium">Immediate action required</span>
+                  <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <VideoEmbed 
+                videoId="685-chbXV2Y" 
+                title="Water Contamination Crisis in Vietnam - Investigative Report"
+                className="fade-in-up"
+              />
+            </div>
+            
+            {/* Video stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-3xl mx-auto">
+              <div className="text-center p-4 glass-card rounded-xl slide-in-right" style={{ animationDelay: '0.2s' }}>
+                <div className="text-white/90 font-semibold">HD Quality</div>
+                <div className="text-white/60 text-sm">1080p Resolution</div>
+              </div>
+              <div className="text-center p-4 glass-card rounded-xl slide-in-right" style={{ animationDelay: '0.4s' }}>
+                <div className="text-white/90 font-semibold">Comprehensive</div>
+                <div className="text-white/60 text-sm">Full Demo</div>
+              </div>
+              <div className="text-center p-4 glass-card rounded-xl slide-in-right" style={{ animationDelay: '0.6s' }}>
+                <div className="text-white/90 font-semibold">Interactive</div>
+                <div className="text-white/60 text-sm">Live Features</div>
+              </div>
+            </div>
+          </section>
+
           {/* Heatmap Section */}
           <section id="heatmap" className="scroll-mt-20">
             <Heatmap />
@@ -70,11 +121,11 @@ export default function HomePage() {
           <section className="fade-in-up">
             <div className="text-center mb-8">
               <h2 className="text-4xl font-bold gradient-text mb-4 floating-animation">
-                🤖 Trò Chuyện Với AquaBot AI
+                Chat with AquaBot AI
               </h2>
               <p className="text-white/80 text-xl max-w-3xl mx-auto leading-relaxed">
-                Hỏi AI bất cứ điều gì về chất lượng nước. AquaBot có thể phân tích heatmap, 
-                dự báo xu hướng và đưa ra khuyến nghị thông minh cho bạn.
+                Ask AI anything about water quality. AquaBot can analyze heatmaps, 
+                forecast trends and provide intelligent recommendations for you.
               </p>
             </div>
             <div className="enhanced-chatbot">
@@ -91,7 +142,7 @@ export default function HomePage() {
           <section className="py-16 fade-in-up">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold gradient-text mb-6 floating-animation">
-                🚀 Why Choose WaterSense AI?
+                Why Choose SafeDrop AI?
               </h2>
               <p className="text-white/80 text-xl max-w-3xl mx-auto leading-relaxed">
                 Our next-generation water quality monitoring platform provides AI-powered insights 
@@ -101,9 +152,6 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="glass-card text-center p-8 hover:scale-105 transition-all duration-300 slide-in-right glow-on-hover" style={{ animationDelay: '0.2s' }}>
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 floating-animation">
-                  <span className="text-3xl">🗺️</span>
-                </div>
                 <h3 className="text-xl font-bold text-white mb-4">
                   3D Heatmap Visualization
                 </h3>
@@ -113,9 +161,6 @@ export default function HomePage() {
               </div>
 
               <div className="glass-card text-center p-8 hover:scale-105 transition-all duration-300 slide-in-right glow-on-hover" style={{ animationDelay: '0.4s' }}>
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-6 floating-animation" style={{ animationDelay: '1s' }}>
-                  <span className="text-3xl">🤖</span>
-                </div>
                 <h3 className="text-xl font-bold text-white mb-4">
                   AI-Powered Analytics
                 </h3>
@@ -141,15 +186,12 @@ export default function HomePage() {
           {/* Water Quality Information */}
           <section className="glass-card p-8 rounded-2xl fade-in-up">
             <h2 className="text-3xl font-bold gradient-text mb-8 text-center floating-animation">
-              💧 Understanding Water Quality Parameters
+              Understanding Water Quality Parameters
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300 slide-in-right" style={{ animationDelay: '0.2s' }}>
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mr-4">
-                    <span className="text-xl text-white">🔬</span>
-                  </div>
                   <h3 className="text-xl font-bold text-white">TDS (Total Dissolved Solids)</h3>
                 </div>
                 <p className="text-blue-100 mb-4 leading-relaxed">

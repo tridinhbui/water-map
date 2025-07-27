@@ -4,9 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  env: {
-    NEXT_PUBLIC_SITE_NAME: 'WaterSense',
-  },
+      env: {
+        NEXT_PUBLIC_SITE_NAME: 'SafeDrop',
+    },
 }
 
 module.exports = nextConfig 
